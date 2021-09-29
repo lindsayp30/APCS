@@ -1,10 +1,1 @@
-SCHEME
-(display "Hello, world!") 
---> have an ouput without quotations
---> with quotations, have an output with quotations
-
-NETLOGO 
-command center > observer > print "Hello, world!"
-
-PYTHON 
-print('Hello, world!')
+hey
