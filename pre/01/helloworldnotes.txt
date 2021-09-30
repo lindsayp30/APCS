@@ -1,0 +1,14 @@
+--> using any plain text editor <Atom>, create a file named <Hello.java> and save it into the APCS folder
+
+--> shift and right click the file from file explorer to open up the powershell
+
+--> type in <ls> to see the files in the folder 
+
+--> type in <javac Hello.java> in order to compile the <Hello.java> into Java Byte Code that can be run by the Java Machine
+no erros means success
+
+--> type in <ls> again to see if there is the <Hello.class> file
+the class file is the compiled Java Byte Code
+
+--> type in "java Hello" to run the program
+should see Hello world! on terminal window
