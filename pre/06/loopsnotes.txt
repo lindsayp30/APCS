@@ -1,0 +1,29 @@
+--> iteration: executing the same code multiple times
+
+THE WHILE STATEMENT
+--> expression in paretheses is the condition
+--> statements in braces are the body
+--> flow of statement
+1. evaluate the condition
+yield of true or false
+2. if the condition is false, skip the body and proceed to the next statement
+3. f the condition is true, execute the body and go back to step 1
+--> in order to termnate the loop, the value of one or more variables should change such that the condition eventually becomes false and terminates
+
+ENCAPSULATION AND GENERALIZATION
+1. write a few lines of code in main or another method, and test them
+2. after confirming that they work, wrap them in a new method, and test again
+encapsulation - wrapping a sequence of statements in a method
+3. if appropriate, replace literal values with variables and parameters
+generalization - replacing something that is unnecessarily specific with something general
+
+THE FOR STATEMENT
+--> (initializer; the condition; the update)
+initializer runs once at the beginning of the loop
+condition is checked each time through the loop, continuing on until false
+update does what is told
+	(int i = 1; i <= rows; i = i + 1)
+
+BREAK AND CONTINUE
+--> break statement exits current loop
+--> continue statement moves on to the next iteration
