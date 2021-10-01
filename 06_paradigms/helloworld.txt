@@ -1,1 +1,16 @@
-hey
+Lindsay Phung
+APCS
+HW06 -- Paradigm Shift / print "Hello, world!" in SCHEME, NETLOGO, PYTHON and observe similiarities, differences
+2021-09-29
+
+SCHEME
+(display "Hello, world!")
+
+NETLOGO
+command center > observer > print "Hello, world!"
+
+PYTHON
+print('Hello, world!')
+--> no difference in output when using ' or "
+
+--> ' or " is needed or else there will be a syntax error
