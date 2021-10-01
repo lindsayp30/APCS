@@ -1,8 +1,8 @@
 /*
 Lindsay Phung
 APCS
-HW08 -- Refactor Freshie Zero
-2021-09-30
+HW08 -- Refactor Freshie Zero / updated greeting message last HW to a function that greets 3 people
+2021-10-01
 
 DISCOVERIES
 - I created a different file named <Greet02.java> which had the same code as <Greet.java>. I encountered the error
