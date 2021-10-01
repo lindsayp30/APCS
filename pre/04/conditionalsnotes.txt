@@ -1,0 +1,76 @@
+RELATIONAL OPERATORS
+--> used to check conditions like whether two values are equal or if one is greater or less than the other
+x == y		x is equal to y
+x != y          x is not equal to y
+x > y           x is greater than y
+x < y           x is less than y
+x >= y          x is greater than or equal to y
+x <= y          x is less than or equal to y
+--> result is true or false, which belong to the data type boolean
+--> make sure to == instead of =
+--> there are no =< and => but there are >= and =<
+
+LOGICAL OPERATORS
+--> logical operators: combines boolean values and produces a boolean value
+&&		and 
+|| 		or
+!		not
+--> don't evaluate second expression if not necessary
+true || anything is always true so Java doesn't evaluate <anything>
+false && anything is always false so Java doesn't evaluate <anything>
+
+DEMORGAN'S LAWS
+--> DeMorgan's Laws: mathematical rules that show how to negate a logical expression
+!(A && B) is the same as !A || !B
+!(A || B) is the same as !A && !B
+--> ! takes precedence over && and ||
+!(x < 5 && y =3) is the same as x >= 5 || y != 3
+!(x >=1 || y != 7) is the same as x < 1 && y == 7
+
+CONDITIONAL STATEMENTS
+--> if true, statement is executed
+--> if false, statement is skipped over and not executed
+
+IF AND ELSE
+--> condition determines which branch [sets of statements inside a conditional statement] gets executed
+if (x % 2 ==0) {
+	System.out.println("x is even");
+} else {
+	System.out.println("x is odd");
+}
+OR
+if (x % 2 ==0)
+	System.out.println("x is even");
+else 
+	System.out.println("x is odd");
+
+CHAINING AND NESTING
+--> chaining: joining of several conditional statements in sequence
+if (x > 0) {
+	System.out.println("x is positive");
+}   else if (x < 0) {
+	System.out.println("x is negative");
+}   else {
+	System.out.println("x is zero");
+}
+--> nesting: putting a conditional statement inside another conditional statement
+if (x == 0) {
+	System.out.println("x is zero");
+} else {
+	if (x > 0) {
+		System.out.println("x is positive");
+	} else {
+		System.out.println("x is negative");
+	}
+}
+
+RETURN STATEMENT
+--> return statement allows one to terminate a method before reaching the end of it
+
+RECURSIVE METHODS
+--> recursion: process of invoking and restarting the same method that is executing
+--> recursive: method that invokes itself
+
+BINARY NUMBERS
+https://www.mathsisfun.com/binary-number-system.html
+
