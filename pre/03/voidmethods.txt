@@ -1,0 +1,18 @@
+--> argument: value provided when one invokes a method 
+--> invoke: cause a method to execute
+--> parameters: list of variables in the parentheses after the method that is needed before running
+argument and parameter must have the same type
+--> local variable: variable declared inside a method
+can not be accessed from outside of the method
+--> signature: first line of a method that defines name, return type, and parameters
+
+BENEFITS OF CREATING A NEW METHOD...
+--> gives one the opportunity to give a name to a group of statements
+makes code easier to read and understand.
+--> can make a program smaller by eliminating repetitive code
+--> since common problem solving technique is to break tasks down into sub-problems, more methods allow one to focus on each sub-problem in isolation, and then compose them into a complete solution
+
+EXERCISE 1
+1. No, I wug.
+You wugga wug.
+I wug.
