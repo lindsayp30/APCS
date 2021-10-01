@@ -1,0 +1,31 @@
+--> array: sequence of values
+--> elements: values in the array
+values in array must have the same type
+
+CREATING ARRAYS
+--> declare a variable with an array type
+--> create the array itself
+--> array types are followed by square brackets
+--> must use the <new> operator
+--> integer expression for the size of an array can not be negative values as one would get a <NegativeArraySizeException>
+--> arrays with zero elements are fine
+
+DISPLAYING ARRAYS
+--> one can use println, but the elemnts of the array are not displayed
+
+COPYING ARRAYS
+--> if one wants to copy the array and not just a reference, one has to create a new array and copy the elements from the old array to the new array
+--> another option is <java.util.Arrays> with method copy0f
+double[] b = Arrays.copy0f(#,#)
+#,# is the number of elements one wants to copy, enabling one to copy just part of an array
+
+ARRAY LENGTH
+--> a.length
+double[] b = Arrays.copy0f(#,a.length)
+
+ARRAY TRAVERSAL
+--> array traversal: looking through the elements of an array
+--> search: common pattern involving traversing an array for a particular element
+--> reduce: common traversal operation that takes an array of values and makes it a single value
+done through sum of elements, product of elements, minimum of elements, maximum of elements...
+--> accumulator: a variable used to collect the sum of the elements at the end of the loop
