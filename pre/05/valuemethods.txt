@@ -1,0 +1,29 @@
+--> void method: method that does not return a value
+
+RETURN VALUES
+--> when compared to void methods, value methods differ in that 
+they declare the type of the return value 
+they use at least one return statement ot provide a return value
+
+WRITING METHODS
+--> key aspects in incremental development
+1. start with a working program and make small changes
+at any point, if there is an error, one would know where to look 
+2. use variables to hold intermediate values so one can check them either with print statements or by using a debugger [detects and corrects errors]
+3. once the program is working, one can consolidate multiple statements into compound expressions 
+
+METHOD COMPOSITION
+--> functional decomposition: process for breaking down a complex computation into simpler methods and then composing the methods to perform the computation
+
+OVERLOADING
+--> defining more than one method with the same name but different parameters
+rename
+
+JAVACDOC TAGS
+--> documentation comments can be made using /**
+--> to organize documentation into sections, optional tags that begin with @ are used
+
+--> Turing complete: programming language that is said to implement any possible algorithm
+
+--> leap of faith: a way to read recursive programs such that instead of following the flow of execution, one assumes that the method works and returns the appropriate value
+work through it?
