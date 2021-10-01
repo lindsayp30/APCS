@@ -1,0 +1,86 @@
+DECLARING VARIABLES
+--> declare variables before assigning them 
+example:
+	int intval;
+	double doubval;
+--> declaration is a statement that creates a new variable and specifies its type [examples: int & char]
+--> keywords [reserved words used by the compiler to analyze programs] are not allowed to be used as variable names
+http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
+
+ASSIGNMENT
+--> when declaring a variable, one creates a named storage location
+--> when making an assignment to a variable, one updates its value
+make sure that the type is the same <string,int>
+
+STATE DIAGRAMS
+--> graphical representation of the state of a program at a given time
+
+PRINTING VARIABLES
+--> displaying a variable is displaying the value of the variable
+--> displaying the name of a variable is done by putting quotes
+
+ARTITHMETIC OPERATORS
+--> operators: symbols that represent computations
+addition is + 
+subtraction is -
+multiplication is *
+division is /
+--> operunds: one of the values on which an operator operates 
+most operators require two operunds
+
+FLOATING-POINT NUMBERS
+--> floating-point number(s) (number(s) with an integer and fractional part(s)) are called double(s)
+remember: 
+	integer 1 is not the same as floating-point 1.0
+
+ROUNDING ERRORS
+--> rounding errors: difference betweeen the number we want to represent and the nearest floating-point number
+--> for absolute precision, use integers instead of floating-point numbers as there may be confusion when operating
+
+OPERATORS FOR STRINGS
+--> concantenation: joining of two values (often strings) end-to-end
+"Hello, " + "World!" yields "Hello, World!"
+--> Java executes operators from left to right 
+(1 + 2 + "Hello") yields 3Hello
+("Hello" + 1 + 2) yields Hello12
+--> when operating with strings and numbers, be mindful of placing
+--> order of operations is implemented
+
+COMPOSITION
+--> composition: combine simple expressions and statements into compound expressions and statements
+
+TYPES OF ERRORS
+1. compile-time errors occur due to a violation in syntax rules
+(1 + 2) is fine
+8) is not fine
+make sure to add semicolons
+2. run-time errors are errors that only appear after the program has started running
+can not run to completion
+rare
+3. logic errors will compile and run without notifying of actual errors, resulting in a non-desired output
+
+THE SYSTEM CLASS
+--> package: group of classes that are related to each other
+--> address: location of a value in computer memory
+--> library: collection of packages and classes that are available for use in other programs
+
+PROGRAM STRUCTURE
+--> (largest) package > class > method > statement > expression > token (smallest
+	java.util > Scanner > nextInt > hour = in.nextInt(); > hour = 60 > hour
+http://docs.oracle.com/javase/8/docs/api/
+
+LITERALS AND CONSTANTS
+--> literals: values that appear in source code
+"Hello" is a string literal
+74 is an integer literal
+--> constants: variables declared final
+
+FORMATTING OUTPUT
+--> printf (f standing for formatted)
+System.out.printf("Four thirds = %.3f", 4.0 / 3.0);
+--> first value in parenthesis is a format string that specifies how the output should be displayed
+--> what follows is the format specifier (starts with a %) that specifies the data type and format (in this example it indicates that the following value should be displayed as floating-point and rounded to 3 decimal places)
+
+MODULUS OPERATOR
+modulus: operator that yields the remainder upon the division of two integers
+5 \% 2 yields 1
