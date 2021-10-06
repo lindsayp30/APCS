@@ -22,15 +22,15 @@ public class Greet {
     System.out.println( greeting );
 
     BigSib mark = new BigSib();
-    greeting = (mark.setHelloMsg( "Salutations" ) + " " + richard.greet( "Dr. Spaceman" ));
+    greeting = (mark.setHelloMsg( "Salutations" ) + " " + mark.greet( "Dr. Spaceman" ));
     System.out.println( greeting );
 
     BigSib farihah = new BigSib();
-    greeting = (farihah.setHelloMsg( "Hey ya" ) + " " + richard.greet( "Kong Fooey" ));
+    greeting = (farihah.setHelloMsg( "Hey ya" ) + " " + farihah.greet( "Kong Fooey" ));
     System.out.println( greeting );
 
     BigSib brad = new BigSib();
-    greeting = (brad.setHelloMsg( "Sup" ) + " " + richard.greet( "mom" ));
+    greeting = (brad.setHelloMsg( "Sup" ) + " " + brad.greet( "mom" ));
     System.out.println( greeting );
   }
 }
