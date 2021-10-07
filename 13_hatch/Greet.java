@@ -11,15 +11,24 @@ UNRESOLVED QUESTIONS
 - private conductors?
 */
 
-public class BigSib {
-    public BigSib() {
-        setHelloMsg("Word up");
-    }
-    private String helloMsg;
-    public void setHelloMsg( String msg ) {
-        helloMsg = msg;
-    }
-    public String greet( String x ) {
-        return (helloMsg + " " + x);
-    }
+public class Greet {
+  public static void main( String[] args ) {
+    String greeting;
+
+    BigSib richard = new BigSib();
+    greeting = richard.greet( "freshman" );
+    System.out.println( greeting );
+
+    BigSib mark = new BigSib();
+    greeting = mark.greet( "Dr. Spaceman" );
+    System.out.println( greeting );
+
+    BigSib farihah = new BigSib();
+    greeting = farihah.greet( "Kong Fooey" );
+    System.out.println( greeting );
+
+    BigSib brad = new BigSib();
+    greeting = brad.greet( "mom" );
+    System.out.println( greeting );
+  }
 }
