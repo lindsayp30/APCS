@@ -14,10 +14,10 @@ public class BigSib {
     public BigSib() {
         setHelloMsg("Word up");
     }
+    private String helloMsg;
     public void setHelloMsg ( String msg ) {
       helloMsg = msg;
     }
-    private String helloMsg;
     public String greet( String x ) {
         return (helloMsg + " " + x);
     }
