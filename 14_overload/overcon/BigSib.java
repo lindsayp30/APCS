@@ -12,7 +12,7 @@ UNRESOLVED QUESTIONS
 
 public class BigSib {
     public BigSib() {
-        setHelloMsg("Word up");
+        setHelloMsg( "Word up" );
     }
     private String helloMsg;
     public void setHelloMsg ( String msg ) {
