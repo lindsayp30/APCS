@@ -1,11 +1,11 @@
 /*
 BJLT -- Jason Yang (Bob)/ Lindsay Phung (Tommy)/ Paul Serbanescu
 APCS
-HW14 -- Customize Your Creation / altered HW13 such with the addition of a overloaded constructor
+HW14 -- Customize Your Creation / altered HW13 such with the knowledge of overloaded constructors
 2021-10-07
 
 DISCOVERIES
--
+- constructor BigSib requires String
 UNRESOLVED QUESTIONS
 -
 */
