@@ -25,7 +25,7 @@ public class DemoScanner {
   public static void main( String[] args ) {
 
     //instantiate a Scanner with STDIN as its bytestream
-    Scanner sc = new Scanner( words.in );
+    Scanner sc = new Scanner( System.in );
 
     while( sc.hasNext() ) {
       System.out.println( sc.next() );
