@@ -150,8 +150,8 @@ public class Pig {
       String ans = "";
       if (beginsWithUpper(w)) {
         w = w.substring(0).toLowerCase();
-        for (int i = 0, i <= w.length(); i++) {
-          ans = w.substring(0).toLowerCase() + w.substring(1, -1)
+        for (int i = 0; i <= w.length(w); i++) {
+          ans = w.substring(0).toLowerCase() + w.substring(1, -1);
         }
       }
       else if (beginsWithVowel(w)) {
