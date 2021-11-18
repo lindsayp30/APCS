@@ -1,32 +1,37 @@
 /*****************************************************
- * Clyde "Thluffy" Sinclair
- * APCS pd00
- * HW38 -- Shmoney
- * 2021-11-18
+ * Kleemex - Lindsay Phung, May Qiu, Xinqing Lin
+ * APCS pd07
+ * HW38 -- Spin Class / recreate a slot matchine
+ * 2021-11-17
+ * time spent: 0.5 hr
  *
  * class Slots
  * skeleton
+ *
+ * DISCO:
+ * - Jackpots are harder to get than miniWins as it took less than 3 tries to get a miniWin and over 10 tries to get a jackpot
+ * QCC:
+ * - Is there a more code-efficient way of checking if three slots are mutually distinctive?
  *****************************************************/
 
 public class Slots {
 
   //instance variable to represent master copy for slot machine
   private static final String[] FRUITS = {
-    "lime", "lime", "lime", 
-    "lemon", "lemon", "lemon", 
+    "lime", "lime", "lime",
+    "lemon", "lemon", "lemon",
     "cherry", "cherry", "cherry",
     /*
       add extra fruits until your heart is content...
       Some suggestions:
-    "orange", "orange", "orange", 
-    "grapefruit", "grapefruit", "grapefruit", 
-    "tangerine", "tangerine", "tangerine", 
-    "ugli", "ugli", "ugli", 
+    "orange", "orange", "orange",
+    "grapefruit", "grapefruit", "grapefruit",
+    "tangerine", "tangerine", "tangerine",
+    "ugli", "ugli", "ugli",
     */
     "peach", "peach", "peach",
     "grapefruit", "grapefruit", "grapefruit",
     "pomegranate", "pomegranate", "pomegranate"
-    
   };
 
   private String[] _fruits; //to be init'd by each instance
@@ -51,12 +56,12 @@ public class Slots {
 
   /*=====================================
     String toString() -- overrides inherited toString()
-    pre:  
+    pre:
     post: returns String of elements in slots 0 thru 2, separated by tabs
     =====================================*/
   public String toString()
   {
-    return (FRUITS[0] + "	" + FRUITS[1] + "	" + FRUITS[2]);
+    return (_fruits[0] + "  " + _fruits[1] + "  " + _fruits[2]);
   }
 
 
@@ -69,8 +74,8 @@ public class Slots {
   {
   	String holderI = _fruits[i];
   	String holderJ = _fruits[j];
-	_fruits[i] = holderJ;
-	_fruits[j] = holderI;
+	  _fruits[i] = holderJ;
+	  _fruits[j] = holderI;
   }
 
 
@@ -84,8 +89,9 @@ public class Slots {
     // A simple approach to shuffling:
     // iterate through the array, swapping
     // the val at each index with a randomly chosen other index
-    for()
-      swap(  );
+    for(int i = 0; i < _fruits.length; i++) {
+      swap(i, (int)(Math.random() * 18));
+    }
   }
 
 
@@ -97,9 +103,13 @@ public class Slots {
     =====================================*/
   public boolean jackpot()
   {
-    boolean retBoo = false;
-
-
+    boolean retBoo;
+    if (_fruits[0].equals(_fruits[1]) && _fruits[1].equals(_fruits[2])) {
+      retBoo = true;
+    }
+    else {
+      retBoo = false;
+    }
     return retBoo;
   }
 
@@ -108,14 +118,21 @@ public class Slots {
     boolean miniWin() -- checks for a winning combo
     pre:  _fruits is existing array
     post: returns true if first 3 slots represent winning combo,
-    or if first 3 slots mutually distinct, 
+    or if first 3 slots mutually distinct,
     false otherwise
     =====================================*/
   public boolean miniWin()
   {
-    boolean retBoo = false;
-
-
+    boolean retBoo;
+    if (_fruits[0].equals(_fruits[1]) && _fruits[1].equals(_fruits[2])) {
+      retBoo = true;
+    }
+    else if ((!_fruits[0].equals(_fruits[1])) && (!_fruits[1].equals(_fruits[2])) && (!_fruits[0].equals(_fruits[2]))) {
+      retBoo = true;
+    }
+    else {
+      retBoo = false;
+    }
     return retBoo;
   }
 
@@ -133,7 +150,7 @@ public class Slots {
     System.out.println( "Machine02 initial state:\t" + machine02 );
 
     System.out.println( "\nSpinning machine01...\n" );
- /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     machine01.spinOnce();
 
     System.out.println();
@@ -173,6 +190,7 @@ public class Slots {
     System.out.println( "====================================" );
     System.out.println( "Your spin..." + "\t" + machine01 );
     System.out.println( "JACKPOT!\n" );
+      /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main
 
