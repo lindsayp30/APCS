@@ -1,0 +1,40 @@
+Lindsay Phung
+APCS
+HW36 -- All Quacked Up / read and take notes on debugging
+2021-11-19
+time spent: 0.5 hr
+
+REMINDER OF TYPES OF ERRORS:
+1. Compile-time errors occur when something is wrong with the syntax of the program. 
+Example: no semicolon at the end of a statement.
+2. Run-time errors occur when something goes wrong while the program is running. 
+Example: an infinite recursion eventually causes a StackOverflowError.
+3. Logic errors cause the program to do the wrong thing. 
+Example: an expression may not be evaluated in the order you expect.
+
+... HOW TO OVERCOME THEM
+PROTIPS THAT HAVE BEEN STATED: Grow your code incrementally. Never stray far from compilable/runnable code.
+                               Stuck? Step away from the machine.         
+1. 
+- fix one error at a time and then recompile (one may consequently fix the rest of the errors)
+- read error message carefully 
+- check for syntax errors
+- simplify the output (concerning print statements) and program (scaling down the problem) or clean up the code (removing unnecessaries)
+2. to tell if your program "hangs" or has inifinte loop/recursion
+- add print statements to check for flow of execution
+   NullPointerException
+- from attempting to access an instance variable / invoke a method on an object that is null
+   ArrayIndexOutOfBoundsException
+- from (incorrect valued) index used to access an (incorrect valued) array 
+   StackOverflowError
+- (inifinte recursion) can be solved by checking for base case + adding print statement to display parameters 
+   FileNotFoundException
+- Java can't find the file you are looking for 
+- can be solved by making sure the file exists and that the path is correct 
+   ArithmeticException
+- wrong arithmetic operation i.e. division by zero 
+3. 
+- make a connection between the code and behaviorial output
+- Is something happening that shouldn't? Is a section of code producing an unexpected effect? Look back at specific parts.
+- break program into components, and test them independently
+- use temporary variables when necessary
