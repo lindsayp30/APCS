@@ -5,12 +5,12 @@ HW36 -- All Quacked Up / read and take notes on debugging
 time spent: 0.5 hr
 
 REMINDER OF TYPES OF ERRORS:
-1. Compile-time errors occur when something is wrong with the syntax of the program. 
-Example: no semicolon at the end of a statement.
-2. Run-time errors occur when something goes wrong while the program is running. 
-Example: an infinite recursion eventually causes a StackOverflowError.
-3. Logic errors cause the program to do the wrong thing. 
-Example: an expression may not be evaluated in the order you expect.
+1. COMPILE-TIME ERRORS occur when something is wrong with the syntax of the program
+example) no semicolon at the end of a statement
+2. RUN-TIME ERRORS occur when something goes wrong while the program is running
+example) an infinite recursion eventually causes a StackOverflowError
+3. LOGIC ERRORS cause the program to do the wrong thing
+example) an expression may not be evaluated in the order you expect
 
 ... HOW TO OVERCOME THEM
 PROTIPS THAT HAVE BEEN STATED: Grow your code incrementally. Never stray far from compilable/runnable code.
