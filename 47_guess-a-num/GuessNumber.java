@@ -64,10 +64,8 @@ public class GuessNumber
   {
     System.out.print("Guess a num bt " + _lo + " & " + _hi + ": ");
     int guess = sc.nextInt();
+      
     //3 cases: we either found it, too hi, too lo
-
-    /* YOUR CODE HERE */
-
     if (guess == _target){
       System.out.println("Correct! It took " + _guessCtr + " guesses");
       return;
@@ -108,7 +106,6 @@ public class GuessNumber
         guess = sc.nextInt();
 
         //3 cases: we either found it, too hi, too lo
-
         _guessCtr++;
         if (guess > _target) {
           System.out.println("Too high, try again...");
