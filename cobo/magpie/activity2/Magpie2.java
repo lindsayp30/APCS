@@ -1,10 +1,10 @@
 /**
  * A program to carry on conversations with a human user.
- * This is the initial version that:  
+ * This is the initial version that:
  * <ul><li>
  *       Uses indexOf to find strings
  * </li><li>
- * 		    Handles responding to simple words and phrases 
+ * 		    Handles responding to simple words and phrases
  * </li></ul>
  * This version uses a nested if to handle default responses.
  * @author Laurie White
@@ -13,25 +13,33 @@
 public class Magpie2
 {
 	/**
-	 * Get a default greeting 	
+	 * Get a default greeting
 	 * @return a greeting
 	 */
 	public String getGreeting()
 	{
 		return "Hello, let's talk.";
 	}
-	
+
 	/**
 	 * Gives a response to a user statement
-	 * 
+	 *
 	 * @param statement
 	 *            the user statement
 	 * @return a response based on the rules given
 	 */
+	 /*
+	 
+	 */
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.indexOf("no") >= 0)
+		statement = statement.trim();
+		if (statement.length() == 0)
+		{
+			response = "I am lonely. Please speak to me.";
+		}
+		else if (statement.indexOf("no") >= 0)
 		{
 			response = "Why so negative?";
 		}
@@ -41,6 +49,28 @@ public class Magpie2
 				|| statement.indexOf("brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (statement.indexOf("dog") >= 0
+				|| statement.indexOf("cat") >= 0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (statement.indexOf("Mr. Mykolyk") >= 0)
+		{
+			response = "He is the #GUDFAM ring leader.";
+		}
+		else if (statement.indexOf("Lindsay") >= 0
+				|| statement.indexOf("Xinqing") >= 0)
+		{
+			response = "Oh em gee, those are the members of the best duo in 251.";
+		}
+		else if (statement.indexOf("251") >= 0)
+		{
+			response = "That's the best room in Stuy.";
+		}
+		else if (statement.indexOf("APCS") >= 0)
+		{
+			response = "What a great, nurturing AP class.";
 		}
 		else
 		{
@@ -59,7 +89,7 @@ public class Magpie2
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
-		
+
 		if (whichResponse == 0)
 		{
 			response = "Interesting, tell me more.";
@@ -75,6 +105,14 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "I have to go water my rat.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "I think so too.";
 		}
 
 		return response;
