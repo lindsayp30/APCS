@@ -1,6 +1,13 @@
 import java.util.Random;
 
 /**
+ * kleex -- Lindsay Phung and Xinqing Lin
+ * APCS
+ * HW 56 -- Turing Training Wheels / collegeboard lab
+ * 2022-01-13
+ * time spent: 1 hr
+ * 
+ * 
  * A program to carry on conversations with a human user.
  * This version:
  *<ul><li>
