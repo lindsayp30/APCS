@@ -38,9 +38,9 @@ public class StatPrinterApp
 
       System.out.println( "sp1 testing... " );
       System.out.println(sp1.max( al1 ));
-      /*
+
       sp1.printHistogram( 50 );
-    */
+
 
 
     //construct data [2,3,2,5,2,3]
@@ -53,17 +53,17 @@ public class StatPrinterApp
     al2.add(2);
     al2.add(3);
 
-  //   StatPrinter sp2 = new StatPrinter( al2 );
-  //
-  //   System.out.println( "sp2 testing: " );
-  //   System.out.println( "al2 max: " + sp1.max(al2) );
-  //   System.out.println( "local modes: " );
-  //   for( Integer i : al2 ) {
-  //   System.out.println( i + " is local mode?\t" + sp2.isLocalMode(i) );
-  //   }
-  //   System.out.println( "histogram:" );
-  //   sp2.printHistogram( 50 );
-  //
+    StatPrinter sp2 = new StatPrinter( al2 );
+
+    System.out.println( "sp2 testing: " );
+    System.out.println( "al2 max: " + sp1.max(al2) );
+    System.out.println( "local modes: " );
+    for( Integer i : al2 ) {
+    System.out.println( i + " is local mode?\t" + sp2.isLocalMode(i) );
+  }
+    System.out.println( "histogram:" );
+    sp2.printHistogram( 50 );
+
   }
 
 }//end StatPrinterApp

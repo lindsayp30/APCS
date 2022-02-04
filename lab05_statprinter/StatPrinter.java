@@ -48,7 +48,7 @@ import java.util.ArrayList;
 public class StatPrinter
 {
   // instance variable for frequencies of each integer in input ArrayList
-  private ArrayList <Integer> _frequency;
+  private ArrayList <Integer> _frequency = new ArrayList();
 
 
   //*************** QUESTION 02 **************************
@@ -58,7 +58,7 @@ public class StatPrinter
   //eg, for data [2,3,2,5,2,3]
   //  _frequency would be [0,0,3,2,0,1]
   public StatPrinter( ArrayList <Integer> data )
-  {
+  {/* YOUR IMPLEMENTATION HERE */
     /* YOUR IMPLEMENTATION HERE */
     for(int i = 0; i <= max(data); i++) {
       _frequency.add(0);
@@ -111,8 +111,13 @@ public class StatPrinter
   //postcond: returns list of modes in _frequency
   public ArrayList<Integer> getLocalModes()
   {
-    /* YOUR IMPLEMENTATION HERE */
-    return _frequency;
+    ArrayList mombo = new ArrayList<Integer>();
+    for (int i = 0; i < _frequency.size(); i++) {
+      if (isLocalMode(i)) {
+        mombo.add(i);
+      }
+    }
+    return mombo;
   }
 
 
@@ -120,7 +125,15 @@ public class StatPrinter
   //precond:  longestBar > 0
   public void printHistogram( int longestBar )
   {
-    /* YOUR IMPLEMENTATION HERE */
+    int scale_factor = longestBar / max(_frequency);
+    for (int i = 0; i < _frequency.size(); i++) {
+      System.out.print(i + " : ");
+      for (int j = 0; j < (_frequency.get(i) * scale_factor); j++) {
+        System.out.print("*");
+      }
+      System.out.print("\n");
+    }
+
   }
 
 }//end class StatPrinter
