@@ -1,8 +1,8 @@
 // PAUDUO -- Joseph Othman and Lindsay Phung
 // APCS pd7
 // L05 -- pulling it together
-// 2022-02-03r
-// time spent:  hrs
+// 2022-02-07
+// time spent: 0.5 hr
 
 
 /**
@@ -51,6 +51,7 @@ public class StatPrinter
   private ArrayList <Integer> _frequency = new ArrayList();
 
 
+  // BIG O CLASSIFICATION: O(n)
   //*************** QUESTION 02 **************************
   //precond:  data.size() > 0, each entry b/t 0,100 inclusive
   //postcond: _frequency.size() set to max(data) + 1
@@ -72,6 +73,7 @@ public class StatPrinter
   }
 
 
+  // BIG O CLASSIFICATION: O(n)
   //*************** QUESTION 01 **************************
   //precond:  data.size() > 0
   //postcond: returns largest integer in data
@@ -87,6 +89,7 @@ public class StatPrinter
   }
 
 
+  // BIG O CLASSIFICATION: O(1)
   //*************** QUESTION 03 **************************
   //postcond: returns true if i > 0 and i < _frequency.size() - 1
   //          and _frequency.get( i - 1 ) < _frequency.get( i )
@@ -107,6 +110,7 @@ public class StatPrinter
   }
 
 
+  // BIG O CLASSIFICATION: O(n)
   //*************** QUESTION 04 **************************
   //postcond: returns list of modes in _frequency
   public ArrayList<Integer> getLocalModes()
@@ -121,6 +125,7 @@ public class StatPrinter
   }
 
 
+  // BIG O CLASSIFICATION: O(n^2)
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
   public void printHistogram( int longestBar )
