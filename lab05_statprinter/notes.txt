@@ -7,7 +7,10 @@ time spent: 0.5 hr
 
 DISCO
 ------------------------------------------------
-*
+* One trick to determining big O runtimes is too look for the "largest loop"
+(i.e. for loops inside of other for loops). For iterative algorithms, looking
+at what is being looped through and how it is being looped through is the main
+determining factor of big O runtimes.
 ================================================
 
 
@@ -21,4 +24,3 @@ MISC
 ------------------------------------------------
 *
 ================================================
-
