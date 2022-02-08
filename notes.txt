@@ -1,0 +1,28 @@
+Lior Polischouk and Lindsay Phung
+APCS
+HW 61 -- Instructions so Simple... / merge and sort array of Implements
+2022-02-07
+time spent: 1 hr
+
+
+DISCO
+------------------------------------------------
+*
+================================================
+
+
+QCC
+------------------------------------------------
+*
+================================================
+
+
+THINKER FIRMWARE
+------------------------------------------------
+*
+================================================
+
+
+useful links copied from assignments page:
+https://ccl.northwestern.edu/netlogo/models/Termites
+https://www.lifewire.com/what-is-firmware-2625881
