@@ -1,0 +1,44 @@
+Lindsay Phung
+APCS
+HW60 -- A Termite is-a Turtle, a Thinker is-a Turtle / passing cards around and
+        attempting to sort them
+2022-02-08
+time spent: 0.5 hr
+
+
+DISCO
+------------------------------------------------
+* DIVIDE AND CONQUER
+* One looks at the top cards at a time
+* A way to remember who gave you the card(s) / who to give the card(s) back to
+  is to remember distinctive characteristics OR to have the person point to you
+* Use your hands to help the process !!
+================================================
+
+
+QCC
+------------------------------------------------
+* Only one "bad turtle" is necessary to invalidate all the work :(
+* What would happen if a person had to split an odd number of cards? I assume it
+  would just be a roughly estimated split then.
+================================================
+
+
+THINKER FIRMWARE
+------------------------------------------------
+* Mr. Mykolyk would split a deck and hand it to 2 people, with these 2 people
+  splitting it and handing it to 2 other people who don't have cards
+* This continues until a person finds themself with 1 card
+* The receiver would hand it back to the person they got it from. The giver, after
+  receiving the card, would sort the cards.
+* This person would then give back their sorted some of cards to the person THEY
+  got their cards from, who would proceed to sort the deck they received from
+  them and someone else
+* This would continue until someone finds themself sorting the whole deck of
+  cards and handing it back to Mr. Mykolyk for inspection
+================================================
+
+
+useful links copied from assignments page:
+https://ccl.northwestern.edu/netlogo/models/Termites
+https://www.lifewire.com/what-is-firmware-2625881

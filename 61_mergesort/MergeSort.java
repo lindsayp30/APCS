@@ -1,15 +1,26 @@
 /***
-  Lior Polischouk and Lindsay Phung
+  LPs (Lior Polischouk and Lindsay Phung)
   APCS
-  HW 61 -- Instructions so Simple... / merge and sort array of Implements
+  HW 61 -- Instructions so Simple... / merge and sort array of ints
   2022-02-08
   time spent: 1 hr
-
   class MergeSort
   Implements mergesort on array of ints.
-
   Summary of Algorithm:
-
+  *Algorithm runs through both arrays until it reaches the end of one of them, or full array is completed
+  *Smaller element of the two initial arrays is added to final, and that array increments by 1
+  *If end of one of initial arrays is reached, the rest of other array is added to final
+  
+  DISCO:
+  *We can use three separate variables; "i" in a for loop to run through each element of full array, 
+    "j" to increment through first array (a), and "k" to increment through second array (b). Doing so allows
+    us to easily track when we have reached the end of one of the input arrays.
+  *
+  
+  QCC:
+  *Is there a shorter way to do the merge method without using multiple variables?
+  *
+  
   ***/
 
 public class MergeSort
