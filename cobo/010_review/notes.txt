@@ -1,0 +1,18 @@
+Lindsay Phung
+APCS
+HW 63 -- Read/Review/Expand
+2022-02-10
+
+ACTIVITY 1
+1.
+  a. sentimentVal( String word )
+  b. yes - String
+  c. yes of return type int
+2.
+  ap = 0.09
+  computer = 0.15
+  science = 0.06
+3.
+  a. no because the parameter type is String
+  b. no because the parameter type is double
+  c. no because sentimentVal only allows for one String

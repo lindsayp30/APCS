@@ -163,10 +163,51 @@ public class Review {
     }
   }
 
-  public static double totalSentiment(String fileName) {
-    sentimentVal(fileName.get());
-    textToString(fileName);
-    return sentiment;
+  public static double totalSentiment(String fileName) 
+  {
+    double answer = 0;
+    String total = textToString(fileName);
+    String [] totall = total.split(" ");
+    for (int i = 0; i < totall.length; i ++) {
+      answer += sentimentVal(totall[i]);
+    }
+    return answer;
   }
 
+  public static int starRating(String fileName) 
+  {
+    double rating = totalSentiment(fileName);
+    if (rating < 0) 
+    {
+      return 0;
+    }
+    else if (rating < 5) 
+    {
+      return 1;
+    }
+    else if (rating < 10) 
+    {
+      return 2;
+    }
+    else if (rating < 15) 
+    {
+      return 3;
+    }
+    else if (rating < 20)
+    {
+      return 4;
+    }
+    else 
+    {
+      return 5;
+    }
+  }
+
+  public static void main(String[] args) 
+  {
+    System.out.println("value of ap: " + sentimentVal("ap"));
+    System.out.println("value of computer: " + sentimentVal("computer"));
+    System.out.println("value of science: " + sentimentVal("science"));
+    System.out.println("testing totalSentiment: " + totalSentiment("negativeAdjectives.txt"));
+  }
 }
