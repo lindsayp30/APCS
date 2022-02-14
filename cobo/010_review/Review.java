@@ -13,7 +13,7 @@ public class Review {
   private static HashMap<String, Double> sentiment = new HashMap<String, Double>();
   private static ArrayList<String> posAdjectives = new ArrayList<String>();
   private static ArrayList<String> negAdjectives = new ArrayList<String>();
-
+  private static ArrayList<String> fake = new ArrayList<String>();
 
   private static final String SPACE = " ";
 
@@ -36,9 +36,9 @@ public class Review {
      try {
       Scanner input = new Scanner(new File("positiveAdjectives.txt"));
       while(input.hasNextLine()){
-        String temp = input.nextLine().trim();
-        System.out.println(temp);
-        posAdjectives.add(temp);
+    //    String temp = input.nextLine().trim();
+    //    System.out.println(temp);
+        posAdjectives.add(input.nextLine().trim());
       }
       input.close();
     }
@@ -57,7 +57,19 @@ public class Review {
     catch(Exception e){
       System.out.println("Error reading or parsing negativeAdjectives.txt");
     }
-  }
+
+//read in the negative adjectives in negativeAdjectives.txt
+  try {
+   Scanner input = new Scanner(new File("fake.txt"));
+   while(input.hasNextLine()){
+     fake.add(input.nextLine().trim());
+   }
+   input.close();
+ }
+ catch(Exception e){
+   System.out.println("Error reading or parsing fake.txt");
+ }
+}
 
   /**
    * returns a string containing all of the text in fileName (including punctuation),
@@ -97,6 +109,25 @@ public class Review {
       return 0;
     }
   }
+
+   public static double totalSentiment(String fileName)
+   {
+//     String reviewstuff = textToString(fileName);
+     double totalsum = 0;
+try{
+     Scanner reviewstuff = new Scanner(new File(fileName));
+     String x = "";
+     while(reviewstuff.hasNext()){
+       x = reviewstuff.next();
+       totalsum = (totalsum + sentimentVal(x));
+     }
+     return totalsum;
+   }
+   catch(Exception e){
+     System.out.println("nvm");
+   }
+return totalsum = 1001;
+   }
 
   /**
    * Returns the ending punctuation of a string, or the empty string if there is none
@@ -163,51 +194,61 @@ public class Review {
     }
   }
 
-  public static double totalSentiment(String fileName) 
-  {
-    double answer = 0;
-    String total = textToString(fileName);
-    String [] totall = total.split(" ");
-    for (int i = 0; i < totall.length; i ++) {
-      answer += sentimentVal(totall[i]);
-    }
-    return answer;
-  }
-
-  public static int starRating(String fileName) 
-  {
-    double rating = totalSentiment(fileName);
-    if (rating < 0) 
-    {
-      return 0;
-    }
-    else if (rating < 5) 
-    {
-      return 1;
-    }
-    else if (rating < 10) 
-    {
-      return 2;
-    }
-    else if (rating < 15) 
-    {
-      return 3;
-    }
-    else if (rating < 20)
-    {
-      return 4;
-    }
-    else 
-    {
+ public static int starRating(String fileName){
+  double totalSentiment = totalSentiment(fileName);
+    if(totalSentiment >= 10)
       return 5;
-    }
-  }
+    else if(totalSentiment >= 7)
+      return 4;
+    else if(totalSentiment >= 5)
+      return 3;
+    else if(totalSentiment >= 3)
+      return 2;
+    else if(totalSentiment >= 1)
+      return 1;
+    else
+      return 0;
+ }
 
-  public static void main(String[] args) 
+  public static String fakeReview (String fileName)
   {
-    System.out.println("value of ap: " + sentimentVal("ap"));
-    System.out.println("value of computer: " + sentimentVal("computer"));
-    System.out.println("value of science: " + sentimentVal("science"));
-    System.out.println("testing totalSentiment: " + totalSentiment("negativeAdjectives.txt"));
+    String fake = "";
+    String file = textToString(fileName);
+    Scanner input = new Scanner(file);
+
+    while( input.hasNext()){
+      String check = input.next();
+      String punct = getPunctuation(check);
+      if( check.charAt(0) == '*'){ // for random just use randomAdjective()
+          check = removePunctuation(check);
+          if(sentimentVal(check) < 0)
+            check = randomNegativeAdj();
+          else
+            check = randomPositiveAdj();
+      }
+          fake = fake + check + punct + " ";
+   }
+      return fake;
+}
+
+    public static void main (String[] args){
+    //tests
+    Review test = new Review();
+    System.out.println( "\ntesting textToString(String reviewmcd)\n" + textToString("reviewmcd.txt"));
+    System.out.println( "\ntesting textToString(String bigReview)\n" + textToString("bigReview.txt"));
+    System.out.println("\n\ntesting randomAdjective\n" + randomAdjective());
+    System.out.println("\ntesting removePunctuation( !WOW!)\n" + removePunctuation("!WO.W!"));
+    System.out.println("\ntesting getPunctuation(!WO.W!)\n" + getPunctuation("!WO.W!"));
+    System.out.println("\ntesting sentimentVal(hello)\n" + sentimentVal("hello"));
+    System.out.println("\ntesting sentimentVal(happily)\n" + sentimentVal("happily"));
+    System.out.println("\ntesting sentimentVal(cold)\n" + sentimentVal("cold"));
+    System.out.println("\ntesting totalSentiment(reviewmcd)\n" + totalSentiment("reviewmcd.txt"));
+    System.out.println("\ntesting totalSentiment(bigReview)\n" + totalSentiment("bigReview.txt"));
+    System.out.println("\ntesting starRating(reviewmcd)\n" + starRating("reviewmcd.txt"));
+    System.out.println("\ntesting starRating(bigReview)\n" + starRating("bigReview.txt"));
+    System.out.println("\ntesting fakereview(fake)\n" + fakeReview("fake.txt"));
+    System.out.println(fake);
+
   }
 }
+
