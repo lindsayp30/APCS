@@ -1,4 +1,4 @@
-// Kosta Dubovskiy and Lindsay Phung
+// KdawgL -- Kosta Dubovskiy and Lindsay Phung
 // APCS pd7
 // HW70 -- AThinkers of the Corn / maze solving (blind, depth-first)
 // 2022-03-07
@@ -19,12 +19,12 @@
  * - Then check if hero is randomly spawned not on the path. If it is not, then
  *   the hero checks to see if there is a path above, to the right, down, and to
  *   the left. The hero goes in that direction, backtracking to the last fork and
- *   changing the @ to .. This way, the hero knows not to go down that (.) path
- *   again.
+ *   changing the @ to . if the road is a dead end. This way, the hero knows not to 
+ *   go down that (.) path again.
  * - Once reaching the exit, we exit out.
  *
  * DISCO
- * - fully visualize problem before working on it
+ * - fully visualize scenario before working on it
  * QCC
  * - encountered an out of bound error that can be resolved with a "one space
  *   buffer around the maze" (piazza)
