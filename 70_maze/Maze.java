@@ -2,7 +2,7 @@
 // APCS pd7
 // HW70 -- AThinkers of the Corn / maze solving (blind, depth-first)
 // 2022-03-07
-// time spent:  hrs
+// time spent: 1 hr
 
 /***
  * SKEELTON for
@@ -15,12 +15,19 @@
  * (mazefile is ASCII representation of a maze, using symbols below)
  *
  * ALGORITHM for finding exit from starting position:
- *  <INSERT YOUR SUMMARY OF ALGO HERE>
+ * - First check if hero is randomly spawned on the exit. If so, then we exit out.
+ * - Then check if hero is randomly spawned not on the path. If it is not, then
+ *   the hero checks to see if there is a path above, to the right, down, and to
+ *   the left. The hero goes in that direction, backtracking to the last fork and
+ *   changing the @ to .. This way, the hero knows not to go down that (.) path
+ *   again.
+ * - Once reaching the exit, we exit out.
  *
  * DISCO
- *
+ * - fully visualize problem before working on it
  * QCC
- *
+ * - encountered an out of bound error that can be resolved with a "one space
+ *   buffer around the maze" (piazza)
  ***/
 
 //enable file I/O
@@ -127,13 +134,7 @@ class MazeSolver
    * @param y starting y-coord, measured from top
    **/
 
-   /*
-   final private char HERO =           '@';
-   final private char PATH =           '#';
-   final private char WALL =           ' ';
-   final private char EXIT =           '$';
-   final private char VISITED_PATH =   '.';
-   */
+
   public void solve( int x, int y )
   {
     delay( FRAME_DELAY ); //slow it down enough to be followable
@@ -144,8 +145,10 @@ class MazeSolver
        System.exit(0);
     }
     //other base cases
-    else if (!onPath(x,y)) /*( _maze[y - 1][x] == EXIT )*/ {
+    else if (!onPath(x,y)) {
       return;
+    }
+    // else if ( _maze[y - 1][x] == EXIT ) {
 	  //   _maze[y][x] = HERO;
     //   solve(y - 1, x);
     // }
@@ -160,16 +163,16 @@ class MazeSolver
     // else if ( _maze[y][x - 1] == EXIT ) {
 	  //   _maze[y][x] = HERO;
     //   solve(y, x - 1);
-    }
+    // }
     //otherwise, recursively solve maze from next pos over,
     //after marking current location
     else {
       _maze[x][y] = HERO;
       System.out.println( this ); //refresh screen
+      solve(x, y - 1);
       solve(x + 1, y);
       solve(x, y + 1);
       solve(x - 1, y);
-      solve(x, y - 1);
       _maze[x][y] = VISITED_PATH;
       System.out.println( this ); //refresh screen
     }
@@ -215,8 +218,9 @@ public class Maze
     ms.solve( 4, 3 );
 
     //drop our hero into maze at random location on path
-    // YOUR RANDOM-POSITION-GENERATOR CODE HERE
-    //ms.solve( startX, startY );
+    // int startX = (int)(w * Math.random());
+    // int startY = (int)(h * Math.random());
+    // ms.solve( startX, startY );
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
