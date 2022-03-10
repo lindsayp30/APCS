@@ -7,11 +7,11 @@
 BIG OH CLASSIFICATION:
 Our algo has a O(n^2) exacution time, with 2 nested for loops.
 we understand that this could have been faster, even using merge
-sort would have yielded O(nlogn), however we wanted to use the mysterion 
+sort would have yielded O(nlogn), however we wanted to use the mysterion
 method to this.
 ALGO
 1. Using a for loop in method ythSmallest, we loop through editing our array using the
-former mysterion method, and change the c value up by one every time. 
+former mysterion method, and change the c value up by one every time.
 2. We exit the for loop in ythSmallest with a sorted array, then take the y-1 index which is the
 yth smallest value.
 BEST CASE SCENARIO: (Describe best-case scenario and justify its Big-O classification.)
@@ -25,26 +25,10 @@ QCC
 */
 public class FastSelect {
 	public static int ythSmallest(int[] arr, int y) {
-		int counter = 0;
-		int left = 0;
-		int right = arr.length-1;
-		boolean count = true;
-		while (count) {
-			
-			if (partition(arr, left, right, counter) == y - 1) {
-				count = false;
-				return arr[partition(arr, left, right, counter)];
-			}
-			else if (partition(arr, left, right, counter) < y - 1) {
-				left = partition(arr, left, right, counter)+1;
-			}
-			else if (partition(arr, left, right, counter) > y - 1) {
-				right = partition(arr, left, right, counter)-1;
-			}
-			counter = left;
-			
+		for (int testC = 0; testC < arr.length; testC++ ) {
+			arr = partition(arr, 0, arr.length-1, testC);
 		}
-		return -1;
+		return arr[y-1];
 	}
 
   //swap values at indices x, y in array o
@@ -61,7 +45,7 @@ public class FastSelect {
     System.out.println();
   }
 
-  public static int partition( int arr[], int left, int right, int pvtPnt)
+  public static int[] partition( int arr[], int left, int right, int pvtPnt)
   {
     int v = arr[pvtPnt];
 
@@ -75,7 +59,7 @@ public class FastSelect {
     }
     swap(s,right,arr);
 
-    return s;
+    return arr;
   }//end partition
 
 public static void main( String[] args )
