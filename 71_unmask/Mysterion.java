@@ -146,6 +146,8 @@ public class Mysterion
     int[] arr5 = {3,0,16,599,1024};
     int[] arr6 = {7,1,5,12,3};
 
+    System.out.println(mysterion(arr5, 0, 4, 2));
+
     /**
     System.out.println("arr6: ");
     printArr(arr6);
@@ -158,7 +160,7 @@ public class Mysterion
 
     // run mysterion on each array,
     // holding a & b fixed, varying c...
-    for( int testC = 0; testC < 5; testC++ ) {
+   /* for( int testC = 0; testC < 5; testC++ ) {
     System.out.println("arr1: ");
     printArr(arr1);
     mysterion(arr1,0,4,testC);
@@ -192,7 +194,10 @@ public class Mysterion
     + testC +"...");
     printArr(arr5);
     System.out.println("-----------------------");
-    }
+    " */
+
+    
+
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main
