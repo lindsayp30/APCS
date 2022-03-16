@@ -2,24 +2,30 @@
 // APCS pd7
 // HW77 -- Insert|Remove
 // 2022-03-16m
-// time spent:  hr
+// time spent: 0.5 hr
 //
 // DISCO
-// -
+// - Tracing is very helpful when visualizing how to go about a method
+// - Use System.out.println() sparingly to see what's going wrong
 // QCC
 // - "LLNode can not be converted to String" reminder that String != getNext();
+// - How can we add to the end of the LLNode like Scheme does with lists?
 // ALGO ADD
-// - The base case takes into account if we're looking for the first index.
-//   If this is so, the program goes to the next node and assigns that as the
-//   head. For any other index, we have an LLNode that stores the nodes prior
-//   to the index of the node we want to add. We have another LLNode that adds
-//   the value at the index and then stores the nodes after the index of the
-//   node we want to add. We connect the two LLNodes, creating an LLNode that
-//   has all the nodes and the value at the right index.
+// 1. If we're trying to add to the zeroth index aka the front of the list, use
+//    the regular add method.
+// 2. If not, add everything before the index in a temporary LLNode.
+// 3. Create another LLNode that adds the newVal at the index specified then
+//    stores the nodes after the index.
+// 4. Connect the two LLNodes, resulting in an LLNode that has all the nodes
+//    and the newVal at the right index.
+// 5. Increase size by 1.
 // ALGO REM
-// - The base case takes into account if we're removing the first index. If
-//   this is so, the program looks at the next node. We used a for loop such
-//   that we would String the car's for each node after.
+// 1. If we're trying to remove the zeroth index aka the front of the list,
+//    get everything after the car.
+// 2. If not, add everything before the index to a temporary LLNode.
+// 3. When getting to the index that should be removed, skip it, and continue
+//    adding everything after.
+// 4. Decrease size by 1.
 
 
 /***
@@ -64,7 +70,6 @@ public class LList implements List //interface def must be in this dir
         tmp = tmp.getNext();
       }
       LLNode tmp2 = new LLNode( newVal, tmp.getNext() );
-      // _head = tmp2;
       tmp.setNext(tmp2);
     }
     _size++;
@@ -82,18 +87,16 @@ public class LList implements List //interface def must be in this dir
         tmp = tmp.getNext();
       }
     } else {
-      for (int i = 0; i < index-1; i++) {
-        tmp = tmp.getNext();
-        retVal += " " + tmp.getCargo();
+      for (int i = 0; i < _size; i++) {
+        if (i == index) {
+          tmp = tmp.getNext();
+        }
+        else if (i != index) {
+          tmp = tmp.getNext();
+          retVal += " " + tmp.getCargo();
+        }
       }
-      _head = tmp.getNext();
-      String here = _head.getCargo();
-      LLNode tmp2 = new LLNode( here, tmp.getNext());
-      for (int j = index + 1; j < _size-1; j++) {
-        tmp2 = tmp2.getNext();
-        retVal += " " + tmp2.getCargo();
       }
-    }
     _size--;
     return retVal;
   }
