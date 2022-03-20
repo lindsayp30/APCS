@@ -31,17 +31,16 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-
-		for(int i = 0; i < ranks.length; i++) {
-			for(int j = 0; j < suits.length; j++) {
-				for(int k = 0; k < values.length; k++) {
-					cards.add(new Card(ranks[i], suits[j], values[k]));
+		cards = new ArrayList<Card>();
+			for(int i = 0; i < ranks.length; i++) {
+				for(int j = 0; j < suits.length; j++) {
+					for(int k = 0; k < values.length; k++) {
+						cards.add(new Card(ranks[i], suits[j], values[k]));
+					}
 				}
 			}
-		}
-
 		size = cards.size();
-		shuffle(cards);
+		// shuffle(cards);
 	} //end constructor
 
 
@@ -71,10 +70,10 @@ public class Deck {
 	 * Randomly permute the given collection of cards
 	 * and reset the size to represent the entire deck.
 	 */
-	public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-
-	}
+	// public void shuffle() {
+	// 	/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+	//
+	// }
 
 	/**
 	 * Deals a card from this deck.
@@ -83,11 +82,16 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-		if(isEmpty()) {
-			size--;
+		size--;
+		if(size > 0) {
 			return cards.get(size);
 		}
 		return null;
+		// if(isEmpty()) {
+		// 	return null;
+		// }
+		// size--;
+		// return cards.get(size);
 	}
 
 	/**
