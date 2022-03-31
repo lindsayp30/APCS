@@ -1,4 +1,4 @@
-k// Rowing Lemurs and Leopards (Ruby Friedman, Lindsay Phung, Lawrence Joa)
+// Rowing Lemurs and Leopards (Ruby Friedman, Lindsay Phung, Lawrence Joa)
 // APCS pd7
 // HW84 -- Stack: What Is It Good For?
 // 2022-03-30w
