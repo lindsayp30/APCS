@@ -26,6 +26,8 @@ public interface Queue<QUASAR>
 
   //Returns the first element of the queue without dequeuing it.
   public QUASAR peekFront();
+  
+  public void sample();
   //~~~~~~~~~~~~~~~~~~~end AP subset~~~~~~~~~~~~~~~~~~~
 
 }//end interface Queue
