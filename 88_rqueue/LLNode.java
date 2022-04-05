@@ -1,100 +1,59 @@
-//Clyde Sinclair
-//APCS pd0
-//HW75 -- Node for a linked list
-//2022-03-11f
-//time spent: _h
+// Rowing Lemurs and Leopards (Ruby Friedman, Lindsay Phung, Lawrence Joa)
+// APCS pd7
+// HW88 -- BPC Kiddies Do Not Wait in Line Either / modified dequeue and shuffling
+// 2022-04-05t
+// time spent: 2.0 hrs
 
-/***
+/*****************************************************
  * class LLNode
  * Implements a node, for use in lists and other container classes.
  * Stores its data as a String
- **/
+ *****************************************************/
 
-public class LLNode
+public class LLNode<SWASHBUCKLE>
 {
-  //instance vars
-  private String _cargo;
-  private LLNode _nextNode;
+    //instance vars
+    private SWASHBUCKLE _cargo;    //cargo may only be of type String
+    private LLNode<SWASHBUCKLE> _nextNode; //pointer to next LLNode
 
-  // constructor
-  public LLNode( String value, LLNode next )
-  {
-    _cargo = value;
-    _nextNode = next;
-  }
-
-
-  //--------------v  ACCESSORS  v--------------
-  public String getCargo()
-  {
-    return _cargo;
-  }
-
-  public LLNode getNext()
-  {
-    return _nextNode;
-  }
-  //--------------^  ACCESSORS  ^--------------
+    // constructor -- initializes instance vars
+    public LLNode( SWASHBUCKLE value, LLNode<SWASHBUCKLE> next ) {
+	     _cargo = value;
+	     _nextNode = next;
+    }
 
 
-  //--------------v  MUTATORS  v--------------
-  public String setCargo( String newCargo )
-  {
-    String foo = getCargo();
-    _cargo = newCargo;
-    return foo;
-  }
+    //--------------v  ACCESSORS  v--------------
+    public SWASHBUCKLE getCargo() { return _cargo; }
 
-  public LLNode setNext( LLNode newNext )
-  {
-    LLNode foo = getNext();
-    _nextNode = newNext;
-    return foo;
-  }
-  //--------------^  MUTATORS  ^--------------
+    public LLNode<SWASHBUCKLE> getNext() { return _nextNode; }
+    //--------------^  ACCESSORS  ^--------------
 
 
-  // override inherited toString
-  public String toString()
-  {
-    return _cargo;
-  }
+    //--------------v  MUTATORS  v--------------
+    public SWASHBUCKLE setCargo( SWASHBUCKLE newCargo ) {
+	      SWASHBUCKLE foo = getCargo();
+	      _cargo = newCargo;
+	      return foo;
+    }
+
+    public LLNode<SWASHBUCKLE> setNext( LLNode<SWASHBUCKLE> newNext ) {
+	     LLNode<SWASHBUCKLE> foo = getNext();
+	     _nextNode = newNext;
+	     return foo;
+    }
+    //--------------^  MUTATORS  ^--------------
 
 
-  //main method for testing
-  public static void main( String[] args )
-  {
+    // override inherited toString
+    public String toString() { return _cargo.toString(); }
 
-    //Below is an exercise in creating a linked list...
 
-    //Create a node
-    LLNode first = new LLNode( "cat", null );
-
-    //Create a new node after the first
-    first.setNext( new LLNode( "dog", null ) );
-
-    //Create a third node after the second
-    first.getNext().setNext( new LLNode( "cow", null ) );
-
-    /* A naive list traversal, has side effects.... ??
-       while( first != null ) {
-         System.out.println( first );
-         first = first.getNext();
-       }
-    */
-
-    //Q: when head ptr moves to next node in list, what happens to the node it just left?
-    //A: garbage collector reclaims that memory
-
-    //  so, better: (w/o moving first)
-    /*
-      LLNode temp = first;
-      while( temp != null ) {
-        System.out.println( temp );
-        temp = temp.getNext();
-      }
-    */
-
-  }//end main
+    //main method for testing
+    public static void main( String[] args )
+    {
+      
+    }//end main
 
 }//end class LLNode
+

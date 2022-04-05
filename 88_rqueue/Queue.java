@@ -1,3 +1,9 @@
+// Rowing Lemurs and Leopards (Ruby Friedman, Lindsay Phung, Lawrence Joa)
+// APCS pd7
+// HW88 -- BPC Kiddies Do Not Wait in Line Either / modified dequeue and shuffling
+// 2022-04-05t
+// time spent: 2.0 hrs
+
 /***
  * interface Queue
  * Includes only methods listed in AP subset of Java
