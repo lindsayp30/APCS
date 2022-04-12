@@ -1,102 +1,95 @@
-/*
+k/*
 Rowing Lemurs and Leopards (Ruby Friedman, Lindsay Phung, Lawrence Joa)
 APCS pd7
-HW89 --
+HW89 -- Queue Two Ways / AL and LL based queues
 2022-04-12t
-time spent:  hrs
+time spent: 1.0 hrs
 */
+/*
+DISCO:
+ * We do not need a head or tail pointer when using the given ArrayList
+   and LinkedList API methods
+ * It is possible to do dequeue and enqueue in constant time.
+ * A _size instance variable is still helpful for keeping track of the
+    Queue size, though it is not needed. 
+QCC:
+ * What other lists can we use to create Queues other than ArrayList
+   and LinkedList?
+ * How do you create a diagram for LinedList when it doesn't use nodes?
 
-public class LLQueue<RANDO> implements Queue<RANDO> {
+*/
+import java.util.LinkedList;
 
-  private LLNode<RANDO> _head, _tail;
+public class LLQueue<E> implements Queue<E> {
+	private LinkedList<E> _queue;
+        private int _size;
 
-  public class LLNode
-{
-  //instance vars
-  private String _cargo;
-  private LLNode _nextNode;
+        public LLQueue() {
+                _size = 0;
+                _queue = new LinkedList<E>();
+        }
 
-  // constructor
-  public LLNode( String value, LLNode next )
-  {
-    _cargo = value;
-    _nextNode = next;
-  }
+	public boolean isEmpty() {
+		return _size == 0;
+	}
 
+	public E peekFront() {
+		return _queue.peekFirst();
+	}
 
-  //--------------v  ACCESSORS  v--------------
-  public String getCargo()
-  {
-    return _cargo;
-  }
+	public E dequeue() {
+		_size--;
+		return _queue.removeFirst();
+	}
 
-  public LLNode getNext()
-  {
-    return _nextNode;
-  }
-  //--------------^  ACCESSORS  ^--------------
+	public void enqueue(E slay) {
+		_queue.addLast(slay);
+		_size++;
+	}
+public static void main(String[] args) {
+  Queue<String> testStr = new ALQueue<String>();
+  System.out.println("Testing with Strings... ");
+  testStr.enqueue("does");
+  testStr.enqueue("this");
+  testStr.enqueue("work");
+  testStr.enqueue("?");
+  System.out.println("The first element: " + testStr.peekFront());
+  System.out.println(testStr.dequeue());
+  System.out.println(testStr.dequeue());
+  System.out.println(testStr.dequeue());
+  System.out.println(testStr.dequeue());
+  System.out.println("Is it empty? " + testStr.isEmpty());
 
+  System.out.println("---------------------------------");
 
-  //--------------v  MUTATORS  v--------------
-  public String setCargo( String newCargo )
-  {
-    String foo = getCargo();
-    _cargo = newCargo;
-    return foo;
-  }
+  Queue<Integer> testInt = new ALQueue<Integer>();
+  System.out.println("Testing with Integers... ");
+  testInt.enqueue(2);
+  testInt.enqueue(4);
+  testInt.enqueue(6);
+  testInt.enqueue(8);
+  System.out.println("The first element: " + testInt.peekFront());
+  System.out.println(testInt.dequeue());
+  System.out.println(testInt.dequeue());
+  System.out.println(testInt.dequeue());
+  System.out.println(testInt.dequeue());
+  System.out.println("Is it empty? " + testInt.isEmpty());
 
-  public LLNode setNext( LLNode newNext )
-  {
-    LLNode foo = getNext();
-    _nextNode = newNext;
-    return foo;
-  }
-  //--------------^  MUTATORS  ^--------------
+  System.out.println("---------------------------------");
 
+  Queue<Object> testObj = new ALQueue<Object>();
+  System.out.println("Testing with Objects... ");
+  testObj.enqueue('b');
+  testObj.enqueue(99.99);
+  testObj.enqueue(false);
+  testObj.enqueue("done");
+  System.out.println("The first element: " + testObj.peekFront());
+  System.out.println(testObj.dequeue());
+  System.out.println(testObj.dequeue());
+  System.out.println(testObj.dequeue());
+  System.out.println(testObj.dequeue());
+  System.out.println("Is it empty? " + testObj.isEmpty());
 
-  // override inherited toString
-  public String toString()
-  {
-    return _cargo;
-  }
-
-
-  //main method for testing
-  public static void main( String[] args )
-  {
-
-    //Below is an exercise in creating a linked list...
-
-    //Create a node
-    LLNode first = new LLNode( "cat", null );
-
-    //Create a new node after the first
-    first.setNext( new LLNode( "dog", null ) );
-
-    //Create a third node after the second
-    first.getNext().setNext( new LLNode( "cow", null ) );
-
-    /* A naive list traversal, has side effects.... ??
-       while( first != null ) {
-         System.out.println( first );
-         first = first.getNext();
-       }
-    */
-
-    //Q: when head ptr moves to next node in list, what happens to the node it just left?
-    //A: garbage collector reclaims that memory
-
-    //  so, better: (w/o moving first)
-    /*
-      LLNode temp = first;
-      while( temp != null ) {
-        System.out.println( temp );
-        temp = temp.getNext();
-      }
-    */
-
-  }//end main
-
-}//end class LLNode
-
+ }
 }
+

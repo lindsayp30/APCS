@@ -1,11 +1,24 @@
 /*
 Rowing Lemurs and Leopards (Ruby Friedman, Lindsay Phung, Lawrence Joa)
 APCS pd7
-HW89 --
+HW89 -- Queue Two Ways / AL and LL based queues
 2022-04-12t
-time spent:  hrs
+time spent: 1.0 hrs
 */
 
+/*
+DISCO:
+ * We do not need a head or tail pointer when using the given ArrayList
+   and LinkedList API methods
+ * It is possible to do dequeue and enqueue in constant time.
+ * A _size instance variable is still helpful for keeping track of the
+    Queue size, though it is not needed.
+QCC:
+ * What other lists can we use to create Queues other than ArrayList
+   and LinkedList?
+ * How do you create a diagram for LinedList when it doesn't use nodes?
+
+*/
 /***
  * interface Queue
  * Includes only methods listed in AP subset of Java
