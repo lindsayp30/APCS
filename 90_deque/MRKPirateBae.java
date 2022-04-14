@@ -66,7 +66,7 @@ public class MRKPirateBae {
 
     System.out.println("---------------------------------");
 
-    Deque<Object> testChar = new QQKachoo<Object>();
+    Deque<Character> testChar = new QQKachoo<Character>();
     System.out.println("Testing with Characters... ");
     testChar.iterator();
     testChar.addFirst('z');
@@ -80,9 +80,9 @@ public class MRKPirateBae {
     testChar.addFirst('c');
     testChar.addLast('t');
     
-    testChar.removeFirstOccurrence('b');
-    testChar.removeLastOccurrence('b');
-    testChar.iterator();
+    System.out.println(testChar.removeFirstOccurrence('b'));
+    System.out.println(testChar.removeLastOccurrence('b'));
+    System.out.println(testChar.iterator());
   }
 
 }
