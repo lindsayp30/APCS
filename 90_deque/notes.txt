@@ -13,11 +13,10 @@ DISCO
 * We improved the content of our Deque file by adding comments to explain each method.
 * In order to implement iterator() and addAll(Collection c), we need to import Iterator
   and Collection.
+* Similar to how int has Object Integer, the char version of this is Character.
 
 QCC
 * Wouldn't it be more efficient to just have peekFirst() and peekLast() methods in
   the API than to include getFirst() and getLast()?
 * How can we create a toString for a deque?
 * What does it mean for an iterator to have its elements in proper sequence?
-* For testChar, how come making a Deque of type Character results in an error?
-  <error: incompaible types: char cannot be converted to Character>
