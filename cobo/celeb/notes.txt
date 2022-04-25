@@ -1,0 +1,19 @@
+(FRONT TOP LEFT)
+- TNPG
+- period
+
+(FRONT TOP RIGHT)
+- name
+
+(BACK)
+TODO
+1. Create a list of celebrities
+2. Set (an amount of) hints for each celebrity 
+3. 
+
+Q
+* What do you do if the reader doesn't know the celebrity on the paper?
+* If the guesser answers with only the first name of the celebrity, does that suffice?
+
+CC
+* 
