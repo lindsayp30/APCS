@@ -1,19 +1,10 @@
-(FRONT TOP LEFT)
-- TNPG
-- period
+DISCO
+- Work with the mechanics of the terminal before implementing GUI (Graphical User
+  Interface).
+- While the GUI is not necessary, it is a nice visualizer.
+- (ACTIVITY 2) We made more than one constructor in the Celebrity class as we wanted
+  to be able to test the set methods.
 
-(FRONT TOP RIGHT)
-- name
-
-(BACK)
-TODO
-1. Create a list of celebrities
-2. Set (an amount of) hints for each celebrity 
-3. 
-
-Q
-* What do you do if the reader doesn't know the celebrity on the paper?
-* If the guesser answers with only the first name of the celebrity, does that suffice?
-
-CC
-* 
+QCC
+- What is the difference between using a class and using an instance variable?
+- (add on to this) Logic vs. functionality ?
