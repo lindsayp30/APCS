@@ -52,6 +52,10 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
+		if (guess.trim().equalsIgnoreCase(gameCelebrity.getAnswer())) {
+			celebGameList.remove(0);
+			return true;
+		}
 		return false;
 	}
 
@@ -64,8 +68,8 @@ public class CelebrityGame
 	{
 		if (celebGameList != null && celebGameList.size() > 0 )
 		{
-		//this.gameCelebrity = celebGameList.get(0);
-		gameWindow.replaceScreen("GAME");
+			this.gameCelebrity = celebGameList.get(0);
+			gameWindow.replaceScreen("GAME");
 		}
 	}
 
@@ -81,10 +85,12 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		if (validateCelebrity(name) && validateClue(guess, type)) {
-			Celebrity celebb = new Celebrity(name, guess);
-			celebGameList.add(celebb);
+		if (type.equals("Literature")) {
+			currentCelebrity = new LiteratureCelebrity(name, guess);
+		} else {
+			currentCelebrity = new Celebrity(name, guess);
 		}
+		this.celebGameList.add(currentCelebrity);
 	}
 
 	/**
@@ -94,7 +100,7 @@ public class CelebrityGame
 	 */
 	public boolean validateCelebrity(String name)
 	{
-		if (!(name.length() >= 4)) {
+		if (!(name.trim().length() >= 4)) {
 			return false;
 		}
 		return true;
@@ -107,13 +113,23 @@ public class CelebrityGame
 	 * @param type Supports a subclass of Celebrity
 	 * @return If the clue is valid.
 	 */
-	public boolean validateClue(String clue, String type)
-	{
-		if (!(clue.length() >= 10)) {
-			return false;
+	 public boolean validateClue(String clue, String type)
+	 {
+		  boolean validClue = false;
+		  if (clue.trim().length() >= 10) {
+		  	validClue = true;
+			  if (type.equalsIgnoreCase("lit terature")){
+			   	String[] temp = clue.split(",");
+				  if (temp.length > 1) {
+				   	validClue = true;
+				  } else {
+				   	validClue = false;
+				  }
+		 		}
+		  //You will need to add an else if condition here fo or your subclass
+		  }
+		  return validClue;
 		}
-		return true;
-	}
 
 	/**
 	 * Accessor method for the current size of the list of celebrities
@@ -122,7 +138,7 @@ public class CelebrityGame
 	 */
 	public int getCelebrityGameSize()
 	{
-		return 0;
+		return celebGameList.size();
 	}
 
 	/**
@@ -133,7 +149,7 @@ public class CelebrityGame
 	 */
 	public String sendClue()
 	{
-		return null;
+		return gameCelebrity.getClue();
 	}
 
 	/**
@@ -144,6 +160,6 @@ public class CelebrityGame
 	 */
 	public String sendAnswer()
 	{
-		return null;
+		return gameCelebrity.getAnswer();
 	}
 }
