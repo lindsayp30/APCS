@@ -32,7 +32,7 @@ public class BST
    */
   BST()
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    _root = null;
   }
 
 
@@ -43,12 +43,12 @@ public class BST
   public void insert( int newVal )
   {
     TreeNode newNode = new TreeNode( newVal );
-    /*** YOUR IMPLEMENTATION HERE ***/
+
   }
   //recursive helper for insert(int)
   public void insert( TreeNode stRoot, TreeNode newNode )
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+
   }//end insert()
 
 
@@ -67,27 +67,27 @@ public class BST
   }
   public void preOrderTrav( TreeNode currNode )
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+
   }
 
   //recurse left, process root, recurse right
   public void inOrderTrav()
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    inOrderTrav( _root );
   }
   public void inOrderTrav( TreeNode currNode )
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+
   }
 
   //recurse left, recurse right, process root
   public void postOrderTrav()
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    postOrderTrav( _root );
   }
   public void postOrderTrav( TreeNode currNode )
   {
-    /*** YOUR IMPLEMENTATION HERE ***/
+    
   }
 
   //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
