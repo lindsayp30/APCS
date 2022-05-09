@@ -1,0 +1,18 @@
+Fried Chicken :: Nina Jiang, Lea Kwok, Lindsay Phung
+APCS pd7
+HW95 -- Algorithm as Data Structure
+2022-05-10t
+time spent:  hrs
+
+DISCO
+* The constructor should initialize the root node.
+
+QCC
+* If there is no stated protection type for the methods, what is the default? We
+  assume public.
+
+With L = level, d = depth, h = height…
+
+    a perfect binary tree has _____ nodes
+    at each level, a perfect binary tree has _____ nodes
+    height of a complete binary tree w/ n nodes is _____
