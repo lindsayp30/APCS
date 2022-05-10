@@ -3,7 +3,7 @@ Fried Chicken :: Nina Jiang, Lea Kwok, Lindsay Phung
 APCS pd7
 HW95 -- Algorithm as Data Structure
 2022-05-10t
-time spent:  hrs
+time spent: 1 hrs
 */
 
 /**
@@ -77,7 +77,7 @@ public class TreeNode
    */
   void setLeft( TreeNode theNewLeft )
   {
-  _lt = theNewLeft;
+    _lt = theNewLeft;
   }
 
 

@@ -3,7 +3,7 @@ Fried Chicken :: Nina Jiang, Lea Kwok, Lindsay Phung
 APCS pd7
 HW95 -- Algorithm as Data Structure
 2022-05-10t
-time spent:  hrs
+time spent: 1 hrs
 */
 
 /**
@@ -48,33 +48,14 @@ public class BST
   //recursive helper for insert(int)
   public void insert( TreeNode stRoot, TreeNode newNode )
   {
-	if (stRoot == null) {
-		stRoot = newNode;
-	}
-	if (stRoot.getValue() > newNode.getValue()) {
-		insert(stRoot, newNode.getRight());
-	} else {
-		insert(stRoot, newNode.getLeft());
-	}
-
-/*  boolean continued = true;
-    if (continued) {
-    if (newNode.getLeft() == null) {
-      newNode.setLeft(stRoot);
-      //continued = false;
-    } else {
-      insert(stRoot, newNode.getLeft());
-    }
-    }
-
-    if (continued) {
-    if (newNode.getRight() == null) {
-      newNode.setRight(stRoot);
-      continued = false;
-    } else {
-      insert(stRoot, newNode.getRight());
-    }
-    }*/
+  	if (stRoot == null) {
+  		stRoot = newNode;
+  	}
+  	else if (stRoot.getValue() > newNode.getValue()) {
+  		insert(stRoot.getLeft(), newNode);
+  	} else {
+  		insert(stRoot.getRight(), newNode);
+  	}
   }//end insert()
 
 
@@ -91,14 +72,17 @@ public class BST
   {
     preOrderTrav( _root );
   }
+
   public void preOrderTrav( TreeNode currNode )
   {
-    System.out.print(currNode.getValue());
+    // if(currNode != null){
+    // }
     if (currNode.getLeft() != null) {
       preOrderTrav(currNode.getLeft());
-    }
-    if (currNode.getRight() != null) {
+    } else if (currNode.getRight() != null) {
       preOrderTrav(currNode.getRight());
+    } else {
+      System.out.print(currNode.getValue());
     }
   }
 
@@ -112,10 +96,10 @@ public class BST
     if (currNode.getLeft() != null) {
       inOrderTrav(currNode.getLeft());
     }
-    System.out.print(currNode.getValue());
     if (currNode.getRight() != null) {
       inOrderTrav(currNode.getRight());
     }
+    System.out.print(currNode.getValue());
   }
 
   //recurse left, recurse right, process root
@@ -123,6 +107,7 @@ public class BST
   {
     postOrderTrav( _root );
   }
+
   public void postOrderTrav( TreeNode currNode )
   {
     if (currNode.getLeft() != null) {
