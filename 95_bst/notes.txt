@@ -6,13 +6,20 @@ time spent:  hrs
 
 DISCO
 * The constructor should initialize the root node.
+* We have three components for each traversal (recursing left, printing the cargo,
+  recursing right). What differs is the order in which they're called.
+* It would be more fitting to have System.out.print than System.out.println since
+  we would prefer the nodes stated on a single line.
+* Compare the cargo when inserting to decide if there is a leftward or rightward 
+  traversal.
 
 QCC
-* If there is no stated protection type for the methods, what is the default? We
-  assume public.
+* We noticed that there is no stated protection type for methods in the TreeNode
+  file. We assume that the default is public.
+* Thanks for the informative comments on top of each method! Very helpful.
 
 With L = level, d = depth, h = height…
 
-    a perfect binary tree has _____ nodes
-    at each level, a perfect binary tree has _____ nodes
-    height of a complete binary tree w/ n nodes is _____
+    a perfect binary tree has __0__ nodes
+    at each level, a perfect binary tree has __2__ nodes
+    height of a complete binary tree w/ n nodes is __0__

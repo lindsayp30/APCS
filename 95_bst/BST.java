@@ -43,12 +43,38 @@ public class BST
   public void insert( int newVal )
   {
     TreeNode newNode = new TreeNode( newVal );
-
+    insert(_root, newNode);
   }
   //recursive helper for insert(int)
   public void insert( TreeNode stRoot, TreeNode newNode )
   {
+	if (stRoot == null) {
+		stRoot = newNode;
+	}
+	if (stRoot.getValue() > newNode.getValue()) {
+		insert(stRoot, newNode.getRight());
+	} else {
+		insert(stRoot, newNode.getLeft());
+	}
 
+/*  boolean continued = true;
+    if (continued) {
+    if (newNode.getLeft() == null) {
+      newNode.setLeft(stRoot);
+      //continued = false;
+    } else {
+      insert(stRoot, newNode.getLeft());
+    }
+    }
+
+    if (continued) {
+    if (newNode.getRight() == null) {
+      newNode.setRight(stRoot);
+      continued = false;
+    } else {
+      insert(stRoot, newNode.getRight());
+    }
+    }*/
   }//end insert()
 
 
@@ -67,7 +93,13 @@ public class BST
   }
   public void preOrderTrav( TreeNode currNode )
   {
-
+    System.out.print(currNode.getValue());
+    if (currNode.getLeft() != null) {
+      preOrderTrav(currNode.getLeft());
+    }
+    if (currNode.getRight() != null) {
+      preOrderTrav(currNode.getRight());
+    }
   }
 
   //recurse left, process root, recurse right
@@ -77,7 +109,13 @@ public class BST
   }
   public void inOrderTrav( TreeNode currNode )
   {
-
+    if (currNode.getLeft() != null) {
+      inOrderTrav(currNode.getLeft());
+    }
+    System.out.print(currNode.getValue());
+    if (currNode.getRight() != null) {
+      inOrderTrav(currNode.getRight());
+    }
   }
 
   //recurse left, recurse right, process root
@@ -87,7 +125,13 @@ public class BST
   }
   public void postOrderTrav( TreeNode currNode )
   {
-    
+    if (currNode.getLeft() != null) {
+      postOrderTrav(currNode.getLeft());
+    }
+    if (currNode.getRight() != null) {
+      postOrderTrav(currNode.getRight());
+    }
+    System.out.print(currNode.getValue());
   }
 
   //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
@@ -97,7 +141,6 @@ public class BST
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
 
       BST arbol = new BST();
 
@@ -123,6 +166,7 @@ public class BST
       arbol.postOrderTrav();
 
       System.out.println( "\n-----------------------------");
+      /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }
 
