@@ -1,0 +1,17 @@
+Fried Chicken :: Nina Jiang, Lea Kwok, Lindsay Phung
+APCS pd7
+HW97 -- Prune Your Tree / adding remove method
+2022-05-12r
+time spent: 1 hrs
+
+
+DISCO
+* Three possible cases for removal: no children, one child, two children.
+* If starting left of the root, keep going right. If starting right of the root,
+  keep going left.
+* We can continue removing recursively if the new parent node has children.
+* A toString() method is helpful.
+
+QCC
+* Does remove need a helper function to work?
+* How would we implement the pointer to the parent?
