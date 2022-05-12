@@ -21,6 +21,15 @@ QCC
 * We are constantly getting NullPointerExceptions when running BST.java, which
   complied, and we are not sure why.
 
+HOW WE CAN DO BETTER
+* In our code, we forgot to set the currNode to the left or right.
+* Insertion affects how balanced a tree is.
+* Best optimal insertion order allows for the lowest height.
+* Worst "      "         is in-order and in descending order.
+* Communication that matters: parents to children. Child does not need to know its
+  parent.
+* Helper -- cleaner signature.
+
 With L = level, d = depth, h = height…
 
     a perfect binary tree has __an even number of__ nodes (in each level but first)

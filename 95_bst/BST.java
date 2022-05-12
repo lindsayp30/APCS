@@ -4,6 +4,15 @@ APCS pd7
 HW95 -- Algorithm as Data Structure
 2022-05-10t
 time spent: 1 hrs
+
+DISCO
+* Height and level are root inclusive. Depth is not.
+* We would calculate the height of the BST through asking the child how 'high' on
+  the tree they are and add 1.
+
+QCC
+*
+
 */
 
 /**
@@ -43,19 +52,32 @@ public class BST
   public void insert( int newVal )
   {
     TreeNode newNode = new TreeNode( newVal );
-    insert(_root, newNode);
+
+    if ( _root == null ) {
+      _root = newNode;
+      return;
+    }
+    insert( _root, newNode );
   }
   //recursive helper for insert(int)
   public void insert( TreeNode stRoot, TreeNode newNode )
   {
-  	if (stRoot == null) {
-  		stRoot = newNode;
-  	}
-  	else if (stRoot.getValue() > newNode.getValue()) {
-  		insert(stRoot.getLeft(), newNode);
-  	} else {
-  		insert(stRoot.getRight(), newNode);
-  	}
+    if ( newNode.getValue() < stRoot.getValue() ) {
+      //if no left child, make newNode the left child
+      if ( stRoot.getLeft() == null )
+        stRoot.setLeft( newNode );
+      else //recurse down left subtree
+        insert( stRoot.getLeft(), newNode );
+      return;
+    }
+    else { // new val >= curr, so look down right subtree
+      //if no right child, make newNode the right child
+      if ( stRoot.getRight() == null )
+        stRoot.setRight( newNode );
+      else //recurse down right subtree
+        insert( stRoot.getRight(), newNode );
+      return;
+    }
   }//end insert()
 
 
@@ -65,62 +87,86 @@ public class BST
   //~~~~~~~~~~~~~v~~TRAVERSALS~~v~~~~~~~~~~~~~~~~~~~~~
 
   // each traversal should simply print to standard out
-  // the nodes visited, in order
+    // the nodes visited, in order
 
-  //process root, recurse left, recurse right
-  public void preOrderTrav()
-  {
-    preOrderTrav( _root );
-  }
+    //process root, recurse left, recurse right
+    public void preOrderTrav()
+    {
+      preOrderTrav( _root );
+    }
+    public void preOrderTrav( TreeNode currNode )
+    {
+      if ( currNode == null )
+  	    return;
+      System.out.print( currNode.getValue() + " " );
+      preOrderTrav( currNode.getLeft() );
+      preOrderTrav( currNode.getRight() );
+    }
 
-  public void preOrderTrav( TreeNode currNode )
-  {
-    // if(currNode != null){
-    // }
-    if (currNode.getLeft() != null) {
-      preOrderTrav(currNode.getLeft());
-    } else if (currNode.getRight() != null) {
-      preOrderTrav(currNode.getRight());
-    } else {
-      System.out.print(currNode.getValue());
+    //recurse left, process root, recurse right
+    public void inOrderTrav()
+    {
+      inOrderTrav( _root );
     }
-  }
+    public void inOrderTrav( TreeNode currNode )
+    {
+      if ( currNode == null )
+        return;
+      inOrderTrav( currNode.getLeft() );
+      System.out.print( currNode.getValue() + " " );
+      inOrderTrav( currNode.getRight() );
+    }
 
-  //recurse left, process root, recurse right
-  public void inOrderTrav()
-  {
-    inOrderTrav( _root );
-  }
-  public void inOrderTrav( TreeNode currNode )
-  {
-    if (currNode.getLeft() != null) {
-      inOrderTrav(currNode.getLeft());
+    //recurse left, recurse right, process root
+    public void postOrderTrav()
+    {
+      postOrderTrav( _root );
     }
-    if (currNode.getRight() != null) {
-      inOrderTrav(currNode.getRight());
+    public void postOrderTrav( TreeNode currNode )
+    {
+      if ( currNode == null )
+        return;
+      postOrderTrav( currNode.getLeft() );
+      postOrderTrav( currNode.getRight() );
+      System.out.print( currNode.getValue() + " "  );
     }
-    System.out.print(currNode.getValue());
-  }
-
-  //recurse left, recurse right, process root
-  public void postOrderTrav()
-  {
-    postOrderTrav( _root );
-  }
-
-  public void postOrderTrav( TreeNode currNode )
-  {
-    if (currNode.getLeft() != null) {
-      postOrderTrav(currNode.getLeft());
-    }
-    if (currNode.getRight() != null) {
-      postOrderTrav(currNode.getRight());
-    }
-    System.out.print(currNode.getValue());
-  }
 
   //~~~~~~~~~~~~~^~~TRAVERSALS~~^~~~~~~~~~~~~~~~~~~~~~
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+      /*****************************************************
+       * TreeNode search(int)
+       * returns pointer to node containing target,
+       * or null if target not found
+       *****************************************************/
+      TreeNode search( int target )
+      {
+      	/*** YOUR IMPLEMENTATION HERE ***/
+      }
+
+
+      /*****************************************************
+       * int height()
+       * returns height of this tree (length of longest leaf-to-root path)
+       * eg: a 1-node tree has height 1
+       *****************************************************/
+      public int height()
+      {
+      	/*** YOUR IMPLEMENTATION HERE ***/
+      }
+
+
+      /*****************************************************
+       * int numLeaves()
+       * returns number of leaves in tree
+       *****************************************************/
+      public int numLeaves()
+      {
+        int counter = 0;
+        if ()
+      }
 
 
   //main method for testing

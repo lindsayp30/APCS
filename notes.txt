@@ -1,13 +1,17 @@
-Rowing Lemurs and Leopards (Ruby Friedman, Lindsay Phung, Lawrence Joa)
+Fried Chicken :: Nina Jiang, Lea Kwok, Lindsay Phung
 APCS pd7
-HW85 -- Leon Leonwood Stack / stack but with ArrayList and Linked List
-2022-03-31r
-time spent: 0.5 hr
+HW97 -- Prune Your Tree / adding remove method
+2022-05-12r
+time spent: 1 hrs
+
 
 DISCO
-- We have to make an object of type PANCAKE when popping. We can't simply return _stack.
-- We don't need stackSize due to the inherited methods in ArrayList and LinkedList.
-- ArrayList and LinkedList can not have a general type. That is why <Z> doesn't work.
+* Three possible cases for removal: no children, one child, two children.
+* If starting left of the root, keep going right. If starting right of the root,
+  keep going left.
+* We can continue removing recursively if the new parent node has children.
+* A toString() method is helpful.
 
 QCC
-- We made sure to append ALStack, LLStack, ArrayList, and LinkedList with <PANCAKE>.
+* Does remove need a helper function to work?
+* How would we implement the pointer to the parent?
