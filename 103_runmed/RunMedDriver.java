@@ -16,9 +16,12 @@
    (input.nums provided; must be in same dir)
 
    -------------------------
-   Clyde "Thluffy" Sinclair
-   APCS
-   2018-05-17
+   Fried Chicken :: Nina Jiang, Lea Kwok, Lindsay Phung
+   APCS pd7
+   HW103 -- Erica's Friends, Hugo, and The One in the Middle / find minimum using
+            minheap and maxheap
+   2022-05-19r
+   time spent: 1.5 hrs
 */
 
 import java.util.Scanner;
