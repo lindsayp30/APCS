@@ -1,7 +1,7 @@
 /*
 Fried Chicken :: Nina Jiang, Lea Kwok, Lindsay Phung
 APCS pd7
-HW104
+HW104 -- Heaping Piles of Sordidness / heapsort
 2022-05-20f
 time spent: 1 hrs
 */
@@ -41,13 +41,13 @@ public class Heapsort
       int tmp = data[0];
 
       //swap last leaf (rightmost on bottom level) into root pos
-      swap(lastLeaf, tmp, data);
+      data[0] = data[lastLeaf]; //swap(lastLeaf, tmp, data);
       //walk now-out-of-place root node down the tree...
       int pos = 0;
       int minChildPos;
       int maxChildPos;
 
-      while( pos < lastLeaf ) {
+      while( pos <= lastLeaf ) {
 
         //choose child w/ max value, or check for child
         maxChildPos = maxChildPos(pos, lastLeaf, data);
@@ -133,10 +133,10 @@ public class Heapsort
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if ( pos < 0 )
+    if ( pos < 0 || pos >= last || lc > last )
       retVal = -1;
     //if no right child, then left child is only option for min
-    else if ( rc < 0 )
+    else if ( rc > last )
       retVal = lc;
     //have 2 children, so compare to find least
     else if ( a[lc] < a[rc] )
@@ -156,10 +156,10 @@ public class Heapsort
     int rc = 2*pos + 2; //index of right child
 
     //pos is not in the heap or pos is a leaf position
-    if ( pos < 0 )
+    if ( pos < 0 || pos >= last || lc > last )
       retVal = -1;
     //if no right child, then left child is only option for min
-    else if ( rc == 0 )
+    else if ( rc > last )
       retVal = lc;
     //have 2 children, so compare to find least -- swtich sign here
     else if ( a[lc] > a[rc] )
